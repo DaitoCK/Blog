@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    padding: 0;
+    }
+    
+    .topbar {
+    background-color: blue;
+    }
+    
+    .topbar nav {
+    float: left;
+    }
+    
+    .topbar nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin: 0 50px;
+    }
+    
+    .social {
+    float: right;
+    }
+    
+    .social a {
+    padding: 0 11px;
+    }
+    
+    .banniere {
+    height: 420px;
+    background-color: rgb(150, 150, 150);
+    }
+    
+    .body {
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    }
+    
+    .container {
+    background-color: rgb(53, 37, 37);
+    max-width: 940px;
+    margin: 3em auto 0;
+    border-radius: 20px;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    margin-bottom: 3em;
+    }
+    
+    .article{
+    position: relative;
+    margin: 50px 0;
+    padding: 0 30px;
+    min-height: 200px;
+    }
+    
+    .article img {
+    float: left;
+    }
+    
+    .article p {
+    text-align: center;
+    padding-top: 25px;
+    }
