@@ -54,10 +54,7 @@ section:last-child {
 	padding-bottom: 0px;
 }
 /*- Reset bootstrap -*/
-@media (min-width: 1200px)
-.container {
-	width: 1260px;
-}
+
 .row-gutter {
 	margin-left: -20px;
 	margin-right: -20px;
@@ -169,7 +166,7 @@ header {
 	transition: all 0.2s ease-out;
 }
 .blog-post .blog-post-body a:hover  {
-	color: #dddddd;
+	color: #ee0202;
 }
 .blog-post .post-meta {
 	margin: 5px 0 20px;
@@ -246,7 +243,7 @@ header {
 	font-family: "Raleway", Sans-serif;
 }
 .sidebar-widget {
-	margin-bottom: 40px;	
+	margin-bottom: 40px;
 }
 .sidebar-widget li {
 	font-size: 17px;
@@ -294,17 +291,8 @@ header {
 	padding-bottom: 0px;
 	margin: 0px;
 }
-.widget-post .post-image {
-	float: left;
-	width: 90px;
-	vertical-align: middle;
-	position: relative;
-	margin-right: 20px;
-}
-.widget-review .post-image {
-	width: 70px;
-	margin-right: 15px;
-}
+
+
 .widget-post .post-body {
 	overflow: hidden;
 }
@@ -349,38 +337,19 @@ header {
 .section-title span {
 }
 /*- Footer -*/
-footer {
-	padding: 0;
-	font-size: 12px;
-	font-weight: 500;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	color: #717171;
-	text-align: center;
-	border-top: 1px solid #CECECE;
-}
-footer .footer-socials {
-	margin: 60px 0 20px;
-}
-footer .footer-socials a {
-	display: inline-block;
-	margin-right: 5px;
-	background-color: #626165;
-	color: #fff;
-	/* padding: 20px; */
-	font-size: 20px;
-	line-height: 45px;
-	width: 45px;
-	height: 45px;
-	border-radius: 50%;
-	-webkit-transition: all 0.2s ease-out;
-	-moz-transition: all 0.2s ease-out;
-	-o-transition: all 0.2s ease-out;
-	transition: all 0.2s ease-out;
-}
-footer .footer-socials a:hover {
-	background-color: #dddddd;
-}
+	footer {
+		padding: 0;
+		font-size: 12px;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: #ffffff;
+		text-align: center;
+		border-top: 1px solid #CECECE;
+		background-color: #151414;
+	}
+
+
 footer .footer-bottom {
-	padding: 10px 0 40px;
+	padding: 50px 0 40px;
 }

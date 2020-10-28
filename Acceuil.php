@@ -4,7 +4,7 @@ session_start();
 require_once('connect.php');
 
 $article = $pdo->query('SELECT * FROM article ORDER BY id DESC');
-
+$categories = $pdo->query('SELECT * FROM categories ORDER BY id DESC');
 ?>
 
 <!DOCTYPE html>
@@ -51,9 +51,15 @@ $article = $pdo->query('SELECT * FROM article ORDER BY id DESC');
 
 <div class="container">
     <header>
-        <a href="#"><img src="images/kyoto.jpg"></a>
+        <a href="#"><img src="images/japanlogo.png"></a>
     </header>
-
+        <section class="main-slider">
+            <ul class="bxslider">
+                <li><div class="slider-item"><img src="https://picsum.photos/1140/500?random=1"><h2><a href="post.html" title="Vintage-Inspired Finds for Your Home">Japan Touch</a></h2></div></li>
+                <li><div class="slider-item"><img src="https://picsum.photos/1140/500?random=1"><h2><a href="post.html" title="Vintage-Inspired Finds for Your Home">Japan Touch</a></h2></div></li>
+                <li><div class="slider-item"><img src="https://picsum.photos/1140/500?random=1"><h2><a href="post.html" title="Vintage-Inspired Finds for Your Home">Japan Touch</a></h2></div></li>
+            </ul>
+        </section>
     <section>
         <div class="row">
             <div class="col-md-8">
@@ -63,6 +69,9 @@ $article = $pdo->query('SELECT * FROM article ORDER BY id DESC');
                     </div>
                     <div class="blog-post-body">
                         <h2><a href="#">The Best Street Style Looks of London Fashion Week</a></h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quisquam ipsa inventore?
+                            Eos suscipit soluta laudantium cupiditate, quod commodi maxime corporis, rem ducimus
+                            error perferendis quae optio veritatis officiis non!</p>
                     </div>
                 </article>
                 <!-- article -->
@@ -72,37 +81,56 @@ $article = $pdo->query('SELECT * FROM article ORDER BY id DESC');
                     </div>
                     <div class="blog-post-body">
                         <h2><a href="#">The Best Street Style Looks of London Fashion Week</a></h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quisquam ipsa inventore?
+                            Eos suscipit soluta laudantium cupiditate, quod commodi maxime corporis, rem ducimus
+                            error perferendis quae optio veritatis officiis non!</p>
                     </div>
                 </article>
                 <!-- article -->
                 <article class="blog-post">
                     <div class="blog-post-image">
-                        <a href="#"><img src="images/fff.png" alt=""></a>
+                        <a href="#"><img src="images/food.jpg" alt=""></a>
                     </div>
                     <div class="blog-post-body">
                         <h2><a href="#">The Best Street Style Looks of London Fashion Week</a></h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quisquam ipsa inventore?
+                            Eos suscipit soluta laudantium cupiditate, quod commodi maxime corporis, rem ducimus
+                            error perferendis quae optio veritatis officiis non!</p>
                     </div>
                 </article>
-
-            <div class="col-md-4 sidebar-gutter">
-                <aside>
-
-                    <!-- sidebar-widget -->
-                    <div class="sidebar-widget">
-                        <h3 class="sidebar-title">Categories</h3>
-                        <div class="widget-container">
-                            <ul class="ld">
-                                <?php while($a = $article->fetch()){?>
-                                    <li>
-                                        <a href="articleDetails.php?id=<?= $a['id'] ?>"> <?= $a['title'] ?></a>
-                                    </li>
-                                <?php } ?>
-                            </ul
-                        </div>
-                    </div>
-                    <!--end side bar-->
             </div>
-            </aside>
+                <div class="col-md-4 sidebar-gutter">
+                    <aside>
+                        <!-- sidebar-widget -->
+                        <div class="sidebar-widget">
+                            <h3 class="sidebar-title">Socials</h3>
+                            <div class="widget-container">
+                                <div class="widget-socials">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                                    <a href="#"><i class="fa fa-reddit"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- sidebar-widget -->
+                        <div class="sidebar-widget">
+                            <h3 class="sidebar-title">Categories</h3>
+                            <div class="widget-container">
+                                <ul class="ld">
+                                    <?php while($a = $article->fetch()){?>
+                                        <li>
+                                            <a href="articleDetails.php?id=<?= $a['id'] ?>"> <?= $a['title'] ?></a>
+                                        </li>
+                                    <?php } ?>
+                                </ul
+                            </div>
+                        </div>
+                </div>
+                </aside>
+            </div>
         </div>
 </div>
 </section>
@@ -110,23 +138,10 @@ $article = $pdo->query('SELECT * FROM article ORDER BY id DESC');
 
 <footer class="footer">
 
-    <div class="footer-socials">
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-instagram"></i></a>
-        <a href="#"><i class="fa fa-google-plus"></i></a>
-        <a href="#"><i class="fa fa-dribbble"></i></a>
-        <a href="#"><i class="fa fa-reddit"></i></a>
-    </div>
-
     <div class="footer-bottom">
         <i class="fa fa-copyright"></i>Blog Japan<br>
     </div>
 </footer>
-
-<!-- Bootstrap core JavaScript
-    ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.bxslider.js"></script>
