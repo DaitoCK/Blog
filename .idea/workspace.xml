@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="407f06a1-9546-4909-ab62-13ab580e0823" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/connect.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Snowboard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/bannière-sac-dos.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/bois.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/burton.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/facebook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/header.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/twitter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery.bxslider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery.bxslider.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/mooz.scripts.min.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +53,7 @@
       <workItem from="1603793624344" duration="1202000" />
       <workItem from="1603872620877" duration="1042000" />
       <workItem from="1603876121271" duration="112000" />
-      <workItem from="1603876235194" duration="2456000" />
+      <workItem from="1603876235194" duration="2897000" />
     </task>
     <servers />
   </component>
