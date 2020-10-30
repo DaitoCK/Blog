@@ -5,8 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Acceuil.php" beforeDir="false" afterPath="$PROJECT_DIR$/Acceuil.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/byCat.php" beforeDir="false" afterPath="$PROJECT_DIR$/byCat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deleteArticle.php" beforeDir="false" afterPath="$PROJECT_DIR$/deleteArticle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/japanlogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/japanlogo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/createdArticle.php" beforeDir="false" afterPath="$PROJECT_DIR$/createdArticle.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +53,7 @@
       <workItem from="1603793624344" duration="1202000" />
       <workItem from="1603872620877" duration="1042000" />
       <workItem from="1603876121271" duration="112000" />
-      <workItem from="1603876235194" duration="42861000" />
+      <workItem from="1603876235194" duration="46164000" />
     </task>
     <servers />
   </component>

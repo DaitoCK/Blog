@@ -1,23 +1,13 @@
 <?php
-
 session_start();
+require_once('connect.php');
 
-if (isset($_GET['category_id']) && !empty($_GET['category_id'])) {
-
-    require_once('connect.php');
-
-    $sql   = "SELECT * FROM article WHERE category_id = $_GET[category_id] ORDER BY id ASC ";
-    $query = $pdo->prepare($sql);
-
-    $query->execute();
-
-    $articles = $query->fetchAll(PDO::FETCH_ASSOC);
-
-}
+$category = $pdo->query('SELECT * FROM categories ORDER BY id DESC');
 
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,8 +22,9 @@ if (isset($_GET['category_id']) && !empty($_GET['category_id'])) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Custom styles for this template -->
     <link href="css/jquery.bxslider.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">    <title>articles</title>
+    <link href="css/style.css" rel="stylesheet">    <title>Catégories</title>
 </head>
+
 <body>
 <style>
     .nav-item{
@@ -54,7 +45,6 @@ if (isset($_GET['category_id']) && !empty($_GET['category_id'])) {
 <div class="container">
     <header>
     </header>
-
     <section>
         <div class="row">
             <div class="">
@@ -66,24 +56,28 @@ if (isset($_GET['category_id']) && !empty($_GET['category_id'])) {
                         <div class="blog-post-text">
                             <div class="container">
                                 <div class="card card-body" style="padding: 1.25rem !important">
-
-                                    <?php
-                                    foreach ($articles as $article) {
-                                    ?>
-                                    <div>
-                                        <a href="articleDetails.php?id=<?= $article['id'] ?>"> <?= $article['title'] ?></a>
+                                    <ul>
                                         <?php
+                                        while ($c = $category->fetch()) {
+                                            ?>
+                                            <li>
+                                                <a href=""><?= $c['categoryName'] ?></a>
+                                                <a href="deleteCategory.php?category_delete=<?= intval($c['id']) ?> ">Supprimer</a>
+                                                <a href="updateCategory.php?category_modifier=<?= intval($c['id']) ?> ">Modifier</a>
+                                            </li>
+                                            <?php
                                         }
                                         ?>
-                                    </div>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </article>
             </div>
+            </article>
         </div>
-    </section>
+</div>
+</section>
 </div><!-- /.container -->
 <footer class="footer">
     <div class="footer-bottom">

@@ -4,11 +4,11 @@ session_start();
 require_once('connect.php');
 require('function.php');
 
-$article = $pdo->query('SELECT * FROM article ORDER BY id DESC');
+$article    = $pdo->query('SELECT * FROM article ORDER BY id DESC');
 $categories = $pdo->query('SELECT * FROM categories ORDER BY id DESC');
 //relier la table article et categories par les colomnes category_id et id
-$sql = $pdo->query("SELECT * FROM categories, article WHERE article.category_id = categories.id ORDER BY created_at DESC");
-$query = $pdo->prepare($sql);
+$sql        = $pdo->query("SELECT * FROM categories, article WHERE article.category_id = categories.id ORDER BY created_at DESC");
+$query      = $pdo->prepare($sql);
 $query->execute();
 //retourne un tableau indexé par le nom de la colonne comme retourné dans le jeu de résultats
 $articles = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -142,7 +142,10 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
                                     <a href="createdArticle.php" title="gererContenu">Ajouter un article</a>
                                 </li>
                                 <li>
-                                <a href="createdCategory.php" title="gererContenu">Ajouter une catégorie</a>
+                                    <a href="createCategory.php" title="gererContenu">Ajouter une catégorie</a>
+                                </li>
+                                <li>
+                                    <a href="categoryList.php" title="gererContenu">Liste des catégories</a>
                                 </li>
                             </ul>
                         </div>
@@ -152,19 +155,27 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
                         <h3 class="sidebar-title">Categories</h3>
                         <div class="widget-container">
                             <ul class="ld">
-                                <?php while ($a = $article->fetch()) { ?>
+                                <?php
+                                while ($a = $article->fetch()) {
+                                    ?>
                                     <li>
                                         <a href="articleDetails.php?id=<?= $a['id'] ?>"> <?= $a['title'] ?></a>
                                     </li>
-                                <?php } ?>
+                                    <?php
+                                }
+                                ?>
                             </ul>
                             <form action="byCat.php" method="GET">
                                 <div>
                                     <select name="category_id">
                                         <option type="text">Voir les articles par Catégorie</option>
-                                        <?php foreach ($categories as $category): ?>
+                                        <?php
+                                        foreach ($categories as $category):
+                                            ?>
                                             <option value="<?= $category['id'] ?>"><?= $category['categoryName'] ?></option>
-                                        <?php endforeach; ?>
+                                        <?php
+                                        endforeach;
+                                        ?>
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-success">Envoyer</button>

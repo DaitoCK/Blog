@@ -51,6 +51,7 @@ if(isset($_POST['title'])){
 </head>
 <body>
 
+
 <style>
     .nav-item{
         padding-right: .5rem;
