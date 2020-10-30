@@ -22,5 +22,7 @@ $req->execute();
 
     <h1>Votre article a bien été supprimé</h1>
 
+    <a href="Acceuil.php"> Revenir à l'accueil</a>
+
 </body>
 </html>

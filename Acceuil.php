@@ -60,18 +60,18 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
         <ul class="bxslider">
             <li>
                 <div class="slider-item"><img src="https://picsum.photos/1140/500?random=1">
-                    <h2><a href="createdArticle.php" title="Vintage-Inspired Finds for Your Home">Ajouter un article</a>
-                    </h2></div>
+                    <h2><a>Japan</a></h2>
+                </div>
             </li>
             <li>
                 <div class="slider-item"><img src="https://picsum.photos/1140/500?random=1">
-                    <h2><a href="createdArticle.php" title="Vintage-Inspired Finds for Your Home">Ajouter un article</a>
-                    </h2></div>
+                    <h2><a>Japan</a></h2>
+                </div>
             </li>
             <li>
                 <div class="slider-item"><img src="https://picsum.photos/1140/500?random=1">
-                    <h2><a href="createdArticle.php" title="Vintage-Inspired Finds for Your Home">Ajouter un article</a>
-                    </h2></div>
+                    <h2><a>Japan</a></h2>
+                </div>
             </li>
         </ul>
     </section>
@@ -83,10 +83,11 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
                         <a href="#"><img src="images/food.jpg" alt=""></a>
                     </div>
                     <div class="blog-post-body">
-                        <h2><a href="#">JAPAN FOOD</a></h2>
+                        <h2><a href="#">JAPANESE  FOOD</a></h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quisquam ipsa inventore?
                             Eos suscipit soluta laudantium cupiditate, quod commodi maxime corporis, rem ducimus
                             error perferendis quae optio veritatis officiis non!</p>
+
                     </div>
                 </article>
                 <!-- article -->
@@ -99,6 +100,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quisquam ipsa inventore?
                             Eos suscipit soluta laudantium cupiditate, quod commodi maxime corporis, rem ducimus
                             error perferendis quae optio veritatis officiis non!</p>
+
                     </div>
                 </article>
                 <!-- article -->
@@ -111,6 +113,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quisquam ipsa inventore?
                             Eos suscipit soluta laudantium cupiditate, quod commodi maxime corporis, rem ducimus
                             error perferendis quae optio veritatis officiis non!</p>
+
                     </div>
                 </article>
             </div>
@@ -132,6 +135,20 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <!-- sidebar-widget -->
                     <div class="sidebar-widget">
+                        <h3 class="sidebar-title">Gérer le contenu</h3>
+                        <div class="widget-container">
+                            <ul class="ld">
+                                <li>
+                                    <a href="createdArticle.php" title="gererContenu">Ajouter un article</a>
+                                </li>
+                                <li>
+                                <a href="createdCategory.php" title="gererContenu">Ajouter une catégorie</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- sidebar-widget -->
+                    <div class="sidebar-widget">
                         <h3 class="sidebar-title">Categories</h3>
                         <div class="widget-container">
                             <ul class="ld">
@@ -140,7 +157,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
                                         <a href="articleDetails.php?id=<?= $a['id'] ?>"> <?= $a['title'] ?></a>
                                     </li>
                                 <?php } ?>
-                            </ul
+                            </ul>
                             <form action="byCat.php" method="GET">
                                 <div>
                                     <select name="category_id">
@@ -154,6 +171,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
                             </form>
                         </div>
                     </div>
+
             </div>
             </aside>
         </div>
