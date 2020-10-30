@@ -6,6 +6,7 @@ hover color:	#fed136 (yellow)
 /* main font for menu. */
 @import url(http://fonts.googleapis.com/css?family=Lora:400|Raleway:100,200,300,400,500,700,800);
 /*- General -*/
+
 body {
 	font-family: "Raleway", Sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -338,7 +339,7 @@ header {
 }
 /*- Footer -*/
 	footer {
-		padding: 0;
+		padding: 30px;
 		font-size: 12px;
 		font-weight: 500;
 		text-transform: uppercase;
@@ -347,9 +348,10 @@ header {
 		text-align: center;
 		border-top: 1px solid #CECECE;
 		background-color: #151414;
+		margin-bottom: 0px;
 	}
 
 
 footer .footer-bottom {
-	padding: 50px 0 40px;
+	padding: 100px 100px 40px;
 }
