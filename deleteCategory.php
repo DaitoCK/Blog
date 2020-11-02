@@ -19,6 +19,8 @@ $req->execute();
 </head>
 
 <body>
+    <h1>Votre catégorie à bien été supprimée</h1>
 
+    <a href="Acceuil.php"> Revenir à l'accueil</a>
 </body>
 </html>

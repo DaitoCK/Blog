@@ -51,30 +51,32 @@ if(isset($_POST['categoryName'])){
 <hr>
 <div class="container">
     <section class="main-slider">
-    <ul class="bxslider">
-        <li>
-            <div class="slider-item"><img src="https://picsum.photos/1140/500?random=1">
-                <h2><a>Japan</a></h2>
-            </div>
-        </li>
-        <li>
-            <div class="slider-item"><img src="https://picsum.photos/1140/500?random=1">
-                <h2><a>Japan</a></h2>
-            </div>
-        </li>
-        <li>
-            <div class="slider-item"><img src="https://picsum.photos/1140/500?random=1">
-                <h2><a>Japan</a></h2>
-            </div>
-        </li>
-    </ul>
-</section>
-<form action="" method="POST">
-    <input type="text" name="categoryName" placeholder="Votre nouvelle catégorie ">
-    <input type="submit">
-    <?php if(isset($message)){echo $message;}?>
-</form>
+        <ul class="bxslider">
+            <li>
+                <div class="slider-item"><img src="https://picsum.photos/1140/500?random=1">
+                    <h2><a>Japan</a></h2>
+                </div>
+            </li>
+            <li>
+                <div class="slider-item"><img src="https://picsum.photos/1140/500?random=1">
+                    <h2><a>Japan</a></h2>
+                </div>
+            </li>
+            <li>
+                <div class="slider-item"><img src="https://picsum.photos/1140/500?random=1">
+                    <h2><a>Japan</a></h2>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <h1>Ajouter une catégorie</h1>
+    <form action="" method="POST">
+        <input type="text" name="categoryName" placeholder="Votre nouvelle catégorie ">
+        <input type="submit">
+        <?php if(isset($message)){echo $message;}?>
+    </form>
 </div><!-- /.container -->
+<hr>
 <footer class="footer">
 
     <div class="footer-bottom">

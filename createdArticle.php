@@ -70,6 +70,9 @@ if(isset($_POST['title'])){
 </nav>
 
 <hr>
+
+<h1>Ajouter un article</h1>
+<hr>
 <div class="m-auto">
     <div class="col-md-6">
         <div class="card card-body">
@@ -98,7 +101,7 @@ if(isset($_POST['title'])){
         </div>
     </div>
 </div>
-
+<hr>
 <footer class="footer">
 
     <div class="footer-bottom">
