@@ -54,7 +54,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
 
 <div class="container">
     <header>
-        <a href="#"><img src="images/japanlogo.png"></a>
+
     </header>
     <section class="main-slider">
         <ul class="bxslider">
@@ -152,7 +152,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <!-- sidebar-widget -->
                     <div class="sidebar-widget">
-                        <h3 class="sidebar-title">Categories</h3>
+                        <h3 class="sidebar-title">Articles</h3>
                         <div class="widget-container">
                             <ul class="ld">
                                 <?php
