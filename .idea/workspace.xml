@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="407f06a1-9546-4909-ab62-13ab580e0823" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Acceuil.php" beforeDir="false" afterPath="$PROJECT_DIR$/Acceuil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.min.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +51,7 @@
       <workItem from="1603793624344" duration="1202000" />
       <workItem from="1603872620877" duration="1042000" />
       <workItem from="1603876121271" duration="112000" />
-      <workItem from="1603876235194" duration="53325000" />
+      <workItem from="1603876235194" duration="53673000" />
     </task>
     <servers />
   </component>
