@@ -4,20 +4,20 @@ session_start();
 require_once('connect.php');
 require('function.php');
 
-$query = $pdo->prepare('SELECT * FROM categories');
+$query = $pdo->prepare('SELECT * FROM category');
 $query->execute();
 $categories = $query->fetchAll();
 
 
 if(isset($_POST['title'])){
-    if(isset($_POST['title']) && isset($_POST['title']) && isset($_POST['content']) && isset($_POST['category_id'])) {
+    if(isset($_POST['title']) && isset($_POST['content']) && isset($_POST['category_id'])) {
 
         $title = $_POST['title'];
         $content = $_POST['content'];
         $category = intval($_POST['category_id']);
         $date = date('Y-m-d');
 
-        $ins = $pdo->prepare("INSERT INTO article (title, content, createdAt, category_id) VALUES (:title, :content, NOW(), :category)");
+        $ins = $pdo->prepare("INSERT INTO post (title, content, createdAt, category_id) VALUES (:title, :content, NOW(), :category)");
         $ins->bindParam(':title', $title);
         $ins->bindParam(':content', $content);
         $ins->bindParam(':category', $category);
@@ -29,7 +29,6 @@ if(isset($_POST['title'])){
         $message = "Veuillez remplir tous les champs";
     }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">

@@ -2,11 +2,11 @@
 
 session_start();
 
-if (isset($_GET['category_id']) && !empty($_GET['category_id'])) {
+if(isset($_GET['category_id']) && !empty($_GET['category_id'])){
 
     require_once('connect.php');
 
-    $sql   = "SELECT * FROM article WHERE category_id = $_GET[category_id] ORDER BY id ASC ";
+    $sql = "SELECT * FROM post WHERE category_id = $_GET[category_id] ORDER BY id ASC ";
     $query = $pdo->prepare($sql);
 
     $query->execute();
@@ -68,7 +68,7 @@ if (isset($_GET['category_id']) && !empty($_GET['category_id'])) {
                                 <div class="card card-body" style="padding: 1.25rem !important">
 
                                     <?php
-                                    foreach ($articles as $article) {
+                                    foreach($articles as $article){
                                     ?>
                                     <div>
                                         <a href="articleDetails.php?id=<?= $article['id'] ?>"> <?= $article['title'] ?></a>

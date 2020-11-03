@@ -4,14 +4,20 @@ session_start();
 require_once('connect.php');
 require('function.php');
 
-$article    = $pdo->query('SELECT * FROM article ORDER BY id DESC');
-$categories = $pdo->query('SELECT * FROM categories ORDER BY id DESC');
-//relier la table article et categories par les colomnes category_id et id
-$sql        = $pdo->query("SELECT * FROM categories, article WHERE article.category_id = categories.id ORDER BY created_at DESC");
-$query      = $pdo->prepare($sql);
-$query->execute();
-//retourne un tableau indexé par le nom de la colonne comme retourné dans le jeu de résultats
-$articles = $query->fetchAll(PDO::FETCH_ASSOC);
+$article = $pdo->query('SELECT * FROM post ORDER BY id ASC');
+$categories = $pdo->query('SELECT * FROM category ORDER BY id ASC');
+$post = $pdo->query('SELECT * FROM post_category');
+
+$sql = $pdo->prepare("SELECT
+                        *
+                        FROM post
+                        JOIN post_category
+                        ON post.id = post_category.post_id
+                        JOIN category
+                        ON category.id = post_category.category_id;");
+$sql->execute();
+
+$articles = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -60,17 +66,17 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
         <ul class="bxslider">
             <li>
                 <div class="slider-item"><img src="https://picsum.photos/1140/500?random=1">
-                    <h2><a>Japan</a></h2>
+                    <h2><a></a></h2>
                 </div>
             </li>
             <li>
                 <div class="slider-item"><img src="https://picsum.photos/1140/500?random=1">
-                    <h2><a>Japan</a></h2>
+                    <h2><a></a></h2>
                 </div>
             </li>
             <li>
                 <div class="slider-item"><img src="https://picsum.photos/1140/500?random=1">
-                    <h2><a>Japan</a></h2>
+                    <h2><a></a></h2>
                 </div>
             </li>
         </ul>
@@ -83,7 +89,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
                         <a href="#"><img src="images/food.jpg" alt=""></a>
                     </div>
                     <div class="blog-post-body">
-                        <h2><a href="#">JAPANESE  FOOD</a></h2>
+                        <h2><a href="#">SEASONS</a></h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quisquam ipsa inventore?
                             Eos suscipit soluta laudantium cupiditate, quod commodi maxime corporis, rem ducimus
                             error perferendis quae optio veritatis officiis non!</p>
@@ -96,7 +102,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
                         <a href="#"><img src="images/visit.jpg" alt=""></a>
                     </div>
                     <div class="blog-post-body">
-                        <h2><a href="#">JAPAN TOURISME</a></h2>
+                        <h2><a href="#">JAPANESE FOOD</a></h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quisquam ipsa inventore?
                             Eos suscipit soluta laudantium cupiditate, quod commodi maxime corporis, rem ducimus
                             error perferendis quae optio veritatis officiis non!</p>
@@ -109,7 +115,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
                         <a href="#"><img src="images/TokyoSafari.jpg" alt=""></a>
                     </div>
                     <div class="blog-post-body">
-                        <h2><a href="#">JAPAN LIFE</a></h2>
+                        <h2><a href="#">TOURISME</a></h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quisquam ipsa inventore?
                             Eos suscipit soluta laudantium cupiditate, quod commodi maxime corporis, rem ducimus
                             error perferendis quae optio veritatis officiis non!</p>
@@ -139,7 +145,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
                         <div class="widget-container">
                             <ul class="ld">
                                 <li>
-                                    <a href="createdArticle.php" title="gererContenu">Ajouter un article</a>
+                                    <a href="createArticle.php" title="gererContenu">Ajouter un article</a>
                                 </li>
                                 <li>
                                     <a href="createCategory.php" title="gererContenu">Ajouter une catégorie</a>
@@ -152,30 +158,15 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <!-- sidebar-widget -->
                     <div class="sidebar-widget">
-                        <h3 class="sidebar-title">Articles</h3>
+                        <h3 class="sidebar-title">Categories</h3>
                         <div class="widget-container">
-                            <ul class="ld">
-                                <?php
-                                while ($a = $article->fetch()) {
-                                    ?>
-                                    <li>
-                                        <a href="articleDetails.php?id=<?= $a['id'] ?>"> <?= $a['title'] ?></a>
-                                    </li>
-                                    <?php
-                                }
-                                ?>
-                            </ul>
                             <form action="byCat.php" method="GET">
                                 <div>
                                     <select name="category_id">
                                         <option type="text">Voir les articles par Catégorie</option>
-                                        <?php
-                                        foreach ($categories as $category):
-                                            ?>
-                                            <option value="<?= $category['id'] ?>"><?= $category['categoryName'] ?></option>
-                                        <?php
-                                        endforeach;
-                                        ?>
+                                        <?php foreach ($categories as $cat): ?>
+                                            <option value="<?= $cat['id'] ?>"><?= $cat['categoryName'] ?></option>
+                                        <?php endforeach; ?>
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-success">Envoyer</button>

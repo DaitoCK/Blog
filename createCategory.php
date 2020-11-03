@@ -1,16 +1,24 @@
 <?php
 session_start();
 require_once('connect.php');
-if(isset($_POST['categoryName'])){
-    if(!empty($_POST['categoryName'])){
-        $ins = $pdo->prepare('INSERT INTO categories (categoryName) VALUES (?)');
-        $ins->execute();
-        $message = 'Votre categorie a bien été créée';
-    }else {
-        $message = "Veuillez remplir tous les champs";
-    }
-}
+require('function.php');
 
+
+
+if(isset($_POST['categoryName'])) {
+
+    $name = $_POST['categoryName'];
+
+    $ins = $pdo->prepare("INSERT INTO category (categoryName) VALUES ('$name') ");
+    var_dump($ins);
+    $post = $ins->execute();
+
+
+
+    $message = 'Votre categorie a bien été créée';
+}else {
+    $message = "Veuillez remplir tous les champs";
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">

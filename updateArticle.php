@@ -1,23 +1,23 @@
-    <?php
-    session_start();
-    require_once('connect.php');
+<?php
+session_start();
+require_once('connect.php');
 
-    $ins = $pdo->prepare('SELECT * FROM article WHERE id= :num');
-    $ins->bindParam(':num', $_GET['article_modifier']);
-    $ins->execute();
-    $article = $ins->fetch();
+$ins = $pdo->prepare('SELECT * FROM post WHERE id= :num');
+$ins->bindParam(':num', $_GET['article_modifier']);
+$ins->execute();
+$article = $ins->fetch();
 
-    if(isset($_POST['id'])){
-        $id = $_REQUEST['id'];
-        $id = intval($id);
-        $title = $_POST['title'];
-        $content = $_POST['content'];
-        $date = date('Y-m-d');
-        $article = $pdo->prepare("UPDATE article SET title = '$title', content = '$content', updatedAt = '$date' WHERE id = '$id'");
-        $article->execute();
-    }
+if(isset($_POST['id'])){
+    $id = $_REQUEST['id'];
+    $id = intval($id);
+    $title = $_POST['title'];
+    $content = $_POST['content'];
+    $date = date('Y-m-d');
+    $article = $pdo->prepare("UPDATE post SET title = '$title', content = '$content', updatedAt = '$date' WHERE id = '$id'");
+    $article->execute();
+}
 
-    ?>
+?>
 
     <!DOCTYPE html>
     <html lang="fr">
